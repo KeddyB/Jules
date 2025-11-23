@@ -1,21 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 interface GameCardProps {
   title: string;
 }
 
 export default function GameCard({ title }: GameCardProps) {
-  const handlePress = () => {
-    Alert.alert(`Starting ${title}...`);
-  };
-
   return (
-    <TouchableOpacity onPress={handlePress}>
-      <View style={styles.container}>
-        <Text style={styles.title}>{title}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
   );
 }
 

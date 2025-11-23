@@ -5,6 +5,7 @@ import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { Link } from 'expo-router';
 import GameCard from '@/components/games/GameCard';
 
 export default function HomeScreen() {
@@ -23,9 +24,15 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Select a Game</ThemedText>
-        <GameCard title="Frogger" />
-        <GameCard title="Tic Tac Toe" />
-        <GameCard title="Chess" />
+        <Link href="/games/frogger">
+          <GameCard title="Frogger" />
+        </Link>
+        <Link href="/games/tictactoe">
+          <GameCard title="Tic Tac Toe" />
+        </Link>
+        <Link href="/games/chess">
+          <GameCard title="Chess" />
+        </Link>
       </ThemedView>
     </ParallaxScrollView>
   );
